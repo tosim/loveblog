@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>uploadTool</title>
+	<script src="js/jquery.min.js"></script>
+	<style type="text/css">
+		*{
+            margin: 0;
+            padding:0;
+        }
+		#header{
+            background-color: #39302A;
+            height: 50px;
+            /*box-shadow: #666 0 0 0 10px;*/
+        }
+
+        #header #headWrap{
+            position: relative;
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            /*background-color: red;*/
+        }
+        #header img{
+            display: block;
+
+            margin: 0 auto;
+            height: 100%;
+            /*background-color: green;*/
+            margin-bottom: -4px;
+        }
+        .row {
+		  max-width: 800px;
+		  margin: 0 auto;
+		  padding: 60px 30px;
+		  background: white;
+		  position: relative;
+		  z-index: 1;
+		  text-align: center;
+		  height: 1500px;
+		}
+		.row:before {
+		  position: absolute;
+		  content: "";
+		  display: block;
+		  top: 0;
+		  left: -5000px;
+		  height: 100%;
+		  width: 15000px;
+		  z-index: -1;
+		  background: inherit;
+		}
+		span {
+		  position: relative;
+		  display: inline-block;
+		  margin: 30px 10px;
+		}
+
+		.balloon {
+		  display: inline-block;
+		  width: 400px;
+		  padding: 10px 0 10px 15px;
+		  font-family: "Open Sans", sans;
+		  font-weight: 400;
+		  color: #377D6A;
+		  background: #efefef;
+		  border: 0;
+		  border-radius: 3px;
+		  outline: 0;
+		  text-indent: 60px;
+		  transition: all .3s ease-in-out;
+		}
+		.balloon::-webkit-input-placeholder {
+		  color: #efefef;
+		  text-indent: 0;
+		  font-weight: 300;
+		}
+		.balloon + label {
+		  display: inline-block;
+		  position: absolute;
+		  top: 8px;
+		  left: 0;
+		  bottom: 8px;
+		  padding: 5px 15px;
+		  color: #032429;
+		  font-size: 11px;
+		  font-weight: 700;
+		  text-transform: uppercase;
+		  text-shadow: 0 1px 0 rgba(19, 74, 70, 0);
+		  transition: all .3s ease-in-out;
+		  border-radius: 3px;
+		  background: rgba(122, 184, 147, 0);
+		}
+		.balloon + label:after {
+		  position: absolute;
+		  content: "";
+		  width: 0;
+		  height: 0;
+		  top: 100%;
+		  left: 50%;
+		  margin-left: -3px;
+		  border-left: 3px solid transparent;
+		  border-right: 3px solid transparent;
+		  border-top: 3px solid rgba(122, 184, 147, 0);
+		  transition: all .3s ease-in-out;
+		}
+
+		.balloon:focus,
+		.balloon:active {
+		  color: #377D6A;
+		  text-indent: 0;
+		  background: #fff;
+		}
+		.balloon:focus::-webkit-input-placeholder,
+		.balloon:active::-webkit-input-placeholder {
+		  color: #aaa;
+		}
+		.balloon:focus + label,
+		.balloon:active + label {
+		  color: #fff;
+		  text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+		  background: #7ab893;
+		  transform: translateY(-40px);
+		}
+		.balloon:focus + label:after,
+		.balloon:active + label:after {
+		  border-top: 4px solid #7ab893;
+		}
+		span label{
+			height: 15px;
+		}
+		#tooldetail{
+			height: 200px;
+			outline: none;
+			resize: none;
+		}
+		button{
+			background-color: #032429;
+			border: 1px solid #032429;
+			color:white;
+			border-radius: 5px;
+			padding:5px 10px 5px 10px;
+			cursor: pointer;
+			transition: 0.3s ease-in-out;
+		}
+		button:hover{
+			background-color: white;
+			color:black;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+	    <div id="headWrap">
+	        <a href="index.html"><img src="img/logo.png"/></a>
+	    </div>
+	</div>
+	
+
+		<div class="row">
+		<form id="uploadForm">
+		  <span>
+		    <input class="balloon" name="toolname" type="text" placeholder="type toolname" /><label for="state">工具名称</label>
+		  </span><br>
+		  <span>
+		    <input class="balloon" name="toolversion" type="text" placeholder="type toolversion" /><label for="planet">工具</label>
+		  </span><br>
+		  <span>
+		    <input class="balloon" name="toolowner" type="text" placeholder="type toolowner" /><label for="galaxy">上传者</label>
+		  </span><br>
+		  <span>
+		    <input class="balloon" name="toolabstract" type="text" placeholder="type toolabstract" /><label for="galaxy">工具简介</label>
+		  </span><br>
+		  <span>
+		    <textarea id="tooldetail" class="balloon" name="tooldetail"></textarea><label for="tooldetail">详细介绍</label>
+		  </span><br>
+
+		  	<input id="fileInput" type="file" name="file" style="display: none">
+		  	</form>
+		  	<button onclick="chooseFile()">选择文件</button>
+			<button id="submit" type="submit">开始上传</button>
+		</div>
+
+
+
+
+			
+	
+	
+</body>
+<script type="text/javascript">
+	function chooseFile(){
+		var file = document.getElementById('fileInput');  
+        file.onchange = function (){    
+            var filePath = document.getElementById('fileInput').value;  
+            console.log(filePath);
+            var point = filePath.lastIndexOf('\\');  
+            var fileName = filePath.substring(point+1);  
+            console.log(fileName);
+        };  
+        if(document.all){  
+        	console.log("first if");
+              file.click();  
+         }  
+         else{  
+         	console.log("next if");
+             var evt =  document.createEvent("MouseEvents");   
+             evt.initEvent("click", true, true);  
+             file.dispatchEvent(evt); 
+         }  
+	}
+	$("#submit").on("click",function(){
+		var form = new FormData(document.getElementById("uploadForm"));
+		$.ajax({
+			url:"/loveblog/UploadToolServlet",
+			type:"post",
+			processData:false,
+			contentType:false,
+			cache:false,
+			data:form,
+			dataType:"json",
+			success:function(data){
+				console.log(data);
+				alert("上传成功");
+			},
+			error:function(){
+				console.log("error")
+			}
+		});
+	});
+</script>
+</html>

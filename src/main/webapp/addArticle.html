@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城婧--新建文章</title>
+    <link href="editormd/css/editormd.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="editormd/editormd.min.js"></script>
+    <script type="text/javascript">
+        function submit(){
+            var FileStatus = 0;
+            //upload
+            var files = new FormData(document.getElementById("files"));
+
+            $('progress').css("display","inline-block");
+            $('#per').css("display","inline-block");
+            $.ajax({
+                url:"/loveblog/UploadHandleServlet",
+                type:"post",
+                data:files,
+                dataType:"json",
+                success:function(data){
+                    if(data.success == 1){
+                        var article = new Object();
+                        article.author = $("select[name='author']").val();
+                        article.tag = $("input[name='tag']").val();
+                        // article.class = $("input[name='class']").val();
+                        article.class = $("select[name='class']").val();
+                        article.title = $("input[name='title']").val();
+                        article.content = $("#editorhtml").val();
+                        article.music = data.music;
+                        article.video = data.video;
+                        article.img = data.img;
+                        $.ajax({
+                            url:"/loveblog/NewArticleServlet",
+                            type:"post",
+                            data:article,
+                            dataType:"json",
+                            success:function(data){
+                                if(data.success == 1){
+                                    alert("上传文章成功！");
+                                    window.location.reload();
+                                    //alert("上传成功！"+data.message);
+                                }
+                            },
+                            error:function(xhr,err){
+                                alert("上传失败！");
+                            }
+                        });
+                        //alert(JSON.stringify(article));
+                        //uploadArticle();
+                        //alert(JSON.stringify(data));
+                    }
+                },
+                error:function(xhr,err){
+                    alert("文件上传失败！");
+                },
+                xhr: function(){ //获取ajaxSettings中的xhr对象，为它的upload属性绑定progress事件的处理函数
+                    var myXhr = $.ajaxSettings.xhr();
+                    if(myXhr.upload){ //检查upload属性是否存在
+                        //绑定progress事件的回调函数
+                        myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
+                    }
+                    return myXhr; //xhr对象返回给jQuery使用
+                },
+                contentType: false, //必须false才会自动加上正确的Content-Type
+                processData: false //必须false才会避开jQuery对 formdata 的默认处理
+            });
+            //end upload
+        }
+        function progressHandlingFunction(e) {
+            if (e.lengthComputable) {
+                $('progress').attr({value : e.loaded, max : e.total}); //更新数据到进度条
+                var percent = e.loaded/e.total*100;
+                $('#per').text(percent.toFixed(2) + "%");
+
+            }
+        }
+    </script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #secondLine{
+            width: 52%;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        #thirdLine{
+            margin:15px auto 15px auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width:500px;
+            /*border:1px solid grey;*/
+            text-align: center;
+        }
+        #thirdLine select[name="author"],#thirdLine select[name="class"]{
+            height:40px;
+            margin:15px auto 15px 5px;
+            margin-left: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 25%;
+            border:1px solid grey;
+            text-align: center;ical-align:middle;
+        }
+
+        #forthLine{
+            margin:0 auto;
+        }
+        #forthLine input[name="submit"]{
+            float: right;
+            width: 20%;
+            height: 28px;
+            margin-right:40px;
+        }
+        #forthLine input:hover{
+            background: red;
+        }
+
+
+        .row {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 60px 30px;
+          background: #AAAAAA;
+          position: relative;
+          z-index: 1;
+          text-align: center;
+          height: 1500px;
+        }
+        .row:before {
+          position: absolute;
+          content: "";
+          display: block;
+          top: 0;
+          left: -5000px;
+          height: 100%;
+          width: 15000px;
+          z-index: -1;
+          background: inherit;
+        }
+        span {
+          position: relative;
+          display: inline-block;
+          margin: 30px 10px;
+        }
+
+
+        #thirdLine .balloon{
+          width:250px;
+          margin-right:5px;
+        }
+        .balloon {
+          display: inline-block;
+          width:400px;
+          padding: 10px 0 10px 15px;
+          font-family: "Open Sans", sans;
+          font-weight: 400;
+          color: #377D6A;
+          background:#efefef;
+          border: 0;
+          border-radius: 3px;
+          outline: 0;
+          text-indent: 60px;
+          transition: all .3s ease-in-out;
+        }
+        .balloon::-webkit-input-placeholder {
+          color: #efefef;
+          text-indent: 0;
+          font-weight: 300;
+        }
+        .balloon + label {
+          display: inline-block;
+          position: absolute;
+          top: 8px;
+          left: 0;
+          bottom: 8px;
+          padding: 5px 15px;
+          color: #032429;
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-shadow: 0 1px 0 rgba(19, 74, 70, 0);
+          transition: all .3s ease-in-out;
+          border-radius: 3px;
+          background: rgba(122, 184, 147, 0);
+        }
+        .balloon + label:after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          top: 100%;
+          left: 50%;
+          margin-left: -3px;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          border-top: 3px solid rgba(122, 184, 147, 0);
+          transition: all .3s ease-in-out;
+        }
+
+        .balloon:focus,
+        .balloon:active {
+          color: #377D6A;
+          text-indent: 0;
+          background: #fff;
+        }
+        .balloon:focus::-webkit-input-placeholder,
+        .balloon:active::-webkit-input-placeholder {
+          color: #aaa;
+        }
+        .balloon:focus + label,
+        .balloon:active + label {
+          color: #fff;
+          text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+          background: #7ab893;
+          transform: translateY(-40px);
+        }
+        .balloon:focus + label:after,
+        .balloon:active + label:after {
+          border-top: 4px solid #7ab893;
+        }
+        span label{
+            height: 15px;
+        }
+        textarea{
+            height: 200px;
+            outline: none;
+            resize: none;
+        }
+        button{
+            background-color:#DDDDDD;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            padding:5px 10px 5px 10px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            margin-left:5px;
+        }
+        button:hover{
+            background-color:red;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+<br>
+
+    <div class="row">
+        <form id="newArticalForm">
+            <span><input class="balloon" type="text" placeholder="type articalname" /><label for="state">文章标题</label></span>
+        </form>
+
+        <div id="secondLine">
+            <form id="files" method="post" enctype="multipart/form-data">
+                <button>图片</button>
+                <button>音乐</button>
+                <button>视频</button>
+                <progress id="pv" style="display: none;" value="0" max="100"></progress><label style="display: none;" id="per">0%</label>
+            </form>
+        </div>
+
+        <div id="thirdLine">
+            <span><input class="balloon" type="text" name="tag" placeholder="tag"><label for="state">标签</label></span>
+                <select name="author">
+                    <option value="姚小城">姚小城</option>
+                    <option value="冯小婧">冯小婧</option>
+                </select><br>
+            <span><input class="balloon" type="text" name="class" placeholder="class"><label for="state">分类</label></span>
+                <select name="class">
+                    <option value="学习笔记">学习笔记</option>
+                    <option value="生活随笔">生活随笔</option>
+                </select>
+        </div>
+    </div>
+        <!-- editormd start -->
+        <div class="editormd" id="test-editormd">
+            <textarea class="editormd-markdown-textarea" name="test-editormd-markdown-doc" id="editormd"></textarea>
+            <!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
+            <!-- html textarea 需要开启配置项 saveHTMLToTextarea == true -->
+            <textarea class="editormd-html-textarea" name="editorhtml" id="editorhtml"></textarea>
+        </div>
+
+        <!-- editormd end -->
+        <div id="forthLine">
+            <input type="submit" name="submit" onclick="submit()" size="20">
+        </div>
+</body>
+<script type="text/javascript">
+    var testEditor;
+    testEditor=$(function() {
+        editormd("test-editormd", {
+            width   : "90%",
+            height  : 600,
+            //markdown : md,
+            codeFold : true,
+            syncScrolling : "single",
+            //你的lib目录的路径
+            path    : "editormd/lib/",
+            imageUpload    : true,
+            imageFormats   : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL : "/frametest/UploadHandleServlet",
+            /*  theme: "dark",//工具栏主题
+             previewTheme: "dark",//预览主题
+             editorTheme: "pastel-on-dark",//编辑主题 */
+            emoji: false,
+            taskList: true,
+            tocm: true,         // Using [TOCM]
+            tex: true,                   // 开启科学公式TeX语言支持，默认关闭
+            flowChart: true,             // 开启流程图支持，默认关闭
+            sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
+            //这个配置在simple.html中并没有，但是为了能够提交表单，使用这个配置可以让构造出来的HTML代码直接在第二个隐藏的textarea域中，方便post提交表单。
+            saveHTMLToTextarea : true
+        });
+
+    });
+</script>
+</html>
+
+

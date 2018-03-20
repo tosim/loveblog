@@ -1,0 +1,197 @@
+#wrapper{
+	
+	background: url(../img/body_repeat.jpg) repeat;
+}
+
+#wrap{
+	/*background-color: blue;*/
+	/*position: relative;
+	top: 80px;*/
+	width: 80%;
+	margin:0 auto;
+	text-align: left;
+	overflow: hidden;
+	/*background-color: red;*/
+}
+
+
+
+.articleDetail{
+	padding: 0 10px;
+}
+
+.articleDetail h2{
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+
+}
+
+/*一些简介信息的样式*/
+.articleDetail div.detailInfo{
+	height: 20px;
+	background-color: #FFFFFF;
+	text-align: center;
+	border:1px dashed #ccc;
+	padding: 5px 0;
+	margin-bottom: 30px;
+	/*opacity: 0.7;*/
+	/*margin-top: 20px;*/
+}
+
+.articleDetail div.detailInfo img{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right:3px;
+	margin-left: 40px;
+	/*background-color: red;*/
+}
+
+.articleDetail div.detailInfo span{
+	/*vertical-align: middle;*/
+	opacity: 0.7;
+	 font-size: 13px;
+}
+
+.articleDetail div.detailInfo i{
+	position: relative;
+	top: -5px;
+	margin-right: 30px;
+	/*margin-left: 40px;*/
+	font-style: normal;
+}
+
+.articleDetail div.music,.articleDetail div.video{
+	/*display: none;*/
+	width: 100%;
+}
+
+.articleDetail div.video{
+	/*height: 300px;*/
+}
+
+.articleDetail div.video video{
+	display: block;
+	/*width: 70%;*/
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.mark:hover{
+	cursor: pointer;
+}
+.markWrap{
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 50px;
+	/*background-color: red;*/
+	text-align: center;
+	height: 50px;
+}
+.mark{
+	/*margin-top: 100px;*/
+	/*position: relative;*/
+	/*top: 50px;*/
+	display: inline-block;
+	color: #FFFFFF;
+	width:30%;
+	height: 50px;
+	background-color: #F17067;
+	/*margin:0 auto;*/
+	line-height: 50px;
+	text-align: center;
+}
+.mark i{
+	font-style: normal;
+	/*color: #000000;*/
+	font-size: 22px;
+}
+
+.mark .like{
+	position: relative;
+	bottom: 3px;
+}
+
+/*.download:hover{
+	cursor: pointer;
+}
+.download{
+	display: inline-block;
+	background-color: #37CED7;
+	height: 50px;
+	width:25%;
+	line-height: 50px;
+	text-align: center;
+	color: #FFFFFF;
+	position: relative;
+	top: -2.5px;
+}*/
+
+.preAndNext{
+	padding-top: 95px;
+	padding-bottom: 25px;
+	/*padding: 75px 0;*/
+}
+.preAndNext label{
+	color: #9999AF;
+	margin-right: 10px;
+}
+.preAndNext a{
+	color:#666674;
+}
+
+.articleContent #content{
+	width: 100%;
+	padding: 0;
+}
+@media screen and (max-width:750px){
+	#wrap{
+		width: 100%;
+		margin:0 auto;
+		text-align: left;
+		overflow: hidden;
+	}
+	.articleDetail div.detailInfo{
+		height: 20px;
+		background-color: #FFFFFF;
+		text-align: center;
+		border:1px dashed #ccc;
+		padding: 5px 0;
+		margin-bottom: 30px;
+		/*opacity: 0.7;*/
+		/*margin-top: 20px;*/
+	}
+
+	.articleDetail div.detailInfo img{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin-right:3px;
+		margin-left: 10px;
+		/*background-color: red;*/
+	}
+
+	.articleDetail div.detailInfo span{
+		/*vertical-align: middle;*/
+		opacity: 0.7;
+		font-size: 12px;
+	}
+
+	.articleDetail div.detailInfo i{
+		position: relative;
+		top: -5px;
+		margin-right: 0;
+		/*margin-left: 40px;*/
+		font-style: normal;
+	}
+
+	.mark{
+		width:40%;
+	}
+	.like{
+		font-size: 12px;
+	}
+	
+
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1"/>
+
+
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script type="text/javascript" src="js/common.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<link rel="stylesheet" type="text/css" href="css/otherItems.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+<title></title>
+
+</head>
+<body>
+<div id="header">
+        <div id="headWrap">
+            <div id="menu"><img src="img/menu.png"/></div>
+            <a href="index.html"><img src="img/logo.png"/></a>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="studyNotes.html">学习笔记</a></li>
+                <li><a href="lifeThink.html">生活随笔</a></li>
+                <li><a href="tools.html">工具下载</a></li>
+                <li><a href="messageBoard.html">留言板</a></li>
+                <li><a href="aboutUs.html">关于我们</a></li>
+                <li id="login"><a>登录</a></li>
+            </ul>
+        </div>
+</div>
+<div id="wrapper">
+    <!-- wrap start! -->
+    <div id="wrap">
+        <!-- articleWrap start! -->
+        <div class="leftWrap">
+            <!-- nav start! -->
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html">首页 </a></li>
+                    <li style="font-size: 10px;"> >> </li>
+                    <li class="active"><a href="lifeThink.html"></a></li>
+                </ul>
+            </div>
+            <!-- nav end! -->
+            <div class="brefsWrap">
+                <div class="brefs">
+                <!-- articleBref start! -->
+                <!-- <div class="articleBref">
+                    <h2>title</h2>
+                    <img src="img/boy.jpg">
+                    <p>这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章这里是文章...</p>
+                    <button class="showDetail">阅读全文</button>
+                    <div>
+                        <span><img src="img/time.png"><i>2017-5-9</i></span>
+                        <span><img src="img/author.png"><i>姚小城</i></span>
+                        <span><img src="img/tag.png"><i>生活随想</i></span>
+                        <span><img src="img/class.png"><i>生活随想</i></span>
+                    </div>
+                </div> -->
+                <!-- articleBref end! -->
+                 
+                </div>
+                <!-- articles end! -->
+                
+            </div>
+            <!-- articlesWrap end -->
+        </div>
+        <!-- articleWrap end! -->
+        <div id="otherItems">
+          <div class="item" style="position:relative;height: 50px;padding: 0; box-shadow: none;">
+              <form class="search">
+                <!-- <i class="fa fa-search"></i> -->
+                  <input class="searchTerm" placeholder="Enter your search term ..." /><input class="searchButton"/>
+                </form>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!-- wrap end -->
+</div>
+<div id="footer">
+    <section class="copy">
+        版权所有(c)2017<br />
+        <!-- 备案/许可证编号：<a target="_blank" href="#"></a><br /> -->
+        Designed By 姚小城 &amp 冯小婧
+    </section>
+</div>
+<div id="totop"><span></span></div>
+<div id="overLay"></div>
+<div id="loginmodal" class="modal">
+      <h1>User Login</h1>
+      
+        <label>Account:</label>
+        <input type="text" name="account" id="account" class="txtfield">
+          
+        <label>Password:</label>
+        <input type="password" name="password" id="password" class="txtfield">
+          
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="loginbtn" class="logbtn" value="Log In"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <input type="text" name="registbtn" id="toregistbtn" class="logbtn" value="Regist">
+        </div>
+      
+</div>
+<div id="registmodal" class="modal">
+      <h1>User Regist</h1>
+
+        <label>Username:</label>
+        <input type="text" name="" id="regUsername" class="txtfield">
+      
+        <label>Telephone:</label>
+        <input type="text" name="telephone" id="regTelephone" class="txtfield">
+        
+        <label>Email:</label>
+        <input type="text" name="email" id="regEmail" class="txtfield">
+
+        <label>Password:</label>
+        <input type="password" name="password" id="regpassword" class="txtfield">
+        
+        <label>Confirm:</label>
+        <input type="password" name="confirm" id="confirm" class="txtfield">
+
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="registbtn" class="logbtn" value="Regist"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <!-- <input type="text" name="registbtn" id="registbtn" class="logbtn" value="Regist"> -->
+        </div>
+      
+</div>
+</body>
+<script type="text/javascript" src="js/queryPage.js"></script>
+<script type="text/javascript">
+var pageClass = "工具下载";
+
+</script>
+</html>

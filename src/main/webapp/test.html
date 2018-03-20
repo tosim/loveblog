@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>testMultipart</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+  <form  action="/loveblog/testMultipart" id="formt" method="post" enctype="multipart/form-data">
+    <input type="text" name="tmp">
+    <input type="file" name="file1">
+    <input type="file" name="file2">
+    <input type="submit" name="submit" value="submit">
+  </form>
+  <!-- <button id="submit">submit</button> -->
+ <!--  <script type="text/javascript">
+  $("#submit").on("click",function(){
+      var formdata = new FormData(document.getElementById("formt"));
+      $.ajax({
+        url:"/loveblog/testMultipart",
+        type:"post",
+        data:formdata,
+        contentType: false, //必须false才会自动加上正确的Content-Type
+        processData: false, //必须false才会避开jQuery对 formdata 的默认处理
+        success:function(data){
+            console.log("success");
+            console.log(data);
+        }
+      });
+  });
+  </script> -->
+</body>
+</html>

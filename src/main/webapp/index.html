@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script type="text/javascript" src="js/common.js"></script>
+<title>frame</title>
+<style type="text/css">
+    
+</style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="headWrap">
+            <div id="menu"><img src="img/menu.png"/></div>
+            <a href="index.html"><img src="img/logo.png"/></a>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="studyNotes.html">学习笔记</a></li>
+                <li><a href="lifeThink.html">生活随笔</a></li>
+                <li><a href="tools.html">工具下载</a></li>
+                <li><a href="messageBoard.html">留言板</a></li>
+                <li><a href="aboutUs.html">关于我们</a></li>
+                <li id="login"><a>登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="wrapper">
+        <!--firstShow-->
+        <div id="firstShow">
+            <img class="animated zoomIn" src="img/back.jpg">
+            <!-- <img class="animated fadeInRight" src="img/boy.jpg"> -->
+            <h1>记录我们的故事</h1>
+            <div>
+                <p class="animated fadeInLeft" style="text-indent: 2em;animation-delay: 1s;">
+                    欢迎来到姚小城和冯小婧的情侣博客，这里是我们在互联网上的家。在这里记录了我们的生活和学习，有我们的心得和体会，更有我们的爱情故事，如果你喜欢我们的博客，记得给我们留言互动哦。
+                </p>
+                <span class="animated fadeInRight" style="float: right;animation-delay: 2s;">——姚 小 城 &amp 冯 小 婧</span>
+            </div>
+        </div>
+        <!--firstShow end!-->
+        <!-- articleWrap start! -->
+        <div id="articleWrap">
+            <!-- leftArticle start! -->
+            <div id="leftArticle">
+
+            </div>
+            <!-- leftArticle end! -->
+
+            <!-- rightArticle start! -->
+            <div id="rightArticle">
+
+            </div>
+            <!-- rightArticle end! -->
+        </div>
+        <!-- articleWrap end! -->
+        <div style="clear: both;"></div>
+    </div>
+    <div id="footer">
+        <section class="copy">
+            版权所有(c)2017<br />
+            <!-- 备案/许可证编号：<a target="_blank" href="#"></a><br /> -->
+            Designed By 姚小城 &amp 冯小婧
+        </section>
+    </div>
+    <div id="totop"><span></span></div>
+
+<div id="overLay"></div>
+<div id="loginmodal" class="modal">
+      <h1>User Login</h1>
+      
+        <label>Account:</label>
+        <input type="text" name="account" id="account" class="txtfield">
+          
+        <label>Password:</label>
+        <input type="password" name="password" id="password" class="txtfield">
+          
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="loginbtn" class="logbtn" value="Log In"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <input type="text" name="registbtn" id="toregistbtn" class="logbtn" value="Regist">
+        </div>
+      
+</div>
+<div id="registmodal" class="modal">
+      <h1>User Regist</h1>
+
+        <label>Username:</label>
+        <input type="text" name="" id="regUsername" class="txtfield">
+      
+        <label>Telephone:</label>
+        <input type="text" name="telephone" id="regTelephone" class="txtfield">
+        
+        <label>Email:</label>
+        <input type="text" name="email" id="regEmail" class="txtfield">
+
+        <label>Password:</label>
+        <input type="password" name="password" id="regpassword" class="txtfield">
+        
+        <label>Confirm:</label>
+        <input type="password" name="confirm" id="confirm" class="txtfield">
+
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="registbtn" class="logbtn" value="Regist"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <!-- <input type="text" name="registbtn" id="registbtn" class="logbtn" value="Regist"> -->
+        </div>
+      
+</div>
+</body>
+<script type="text/javascript">
+    var boyArtNum = 0;
+    var girlArtNum = 0;
+    var isReady = 1;
+    var isFirst = 1;
+    function createArticleBref(data) {
+        console.log(data);
+        var articleBref = $("<div class='articleBref'></div>");
+        articleBref.append($("<h2>" + data.art_title + "</h2>"));
+        articleBref.append($("<a href='articleDetail.html?article=" + data.art_id + "'><img src=" + data.art_img + "></a>"));
+        articleBref.append($('<p>' + data.art_abstract + '</p>'));
+        var articleBrefDiv = $('<div></div>');
+        articleBrefDiv.append($('<span><img src="img/time.png"><i>' + data.art_time + '</i></span>'));
+        articleBrefDiv.append($('<span><img src="img/author.png"><i>' + data.art_author + '</i></span>'));
+        articleBrefDiv.append($('<span><img src="img/tag.png"><i>' + data.art_tag + '</i></span>'));
+        articleBrefDiv.append($('<span><img src="img/class.png"><i>' + data.art_class + '</i></span>'));
+        articleBref.append(articleBrefDiv);
+        return articleBref;
+    }
+
+    function getTwoArticles() {
+        isReady = 0;
+        param = new Object();
+        param.boyArtNum = boyArtNum;
+        param.girlArtNum = girlArtNum;
+        console.log(param);
+        $.ajax({
+            url: "/loveblog/GetTwoArticlesServlet",
+            type: "post",
+            data: param,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                if (typeof (data.boy) != "undefined") {
+                    var leftArticle = createArticleBref(data.boy);
+                    leftArticle.addClass("animated fadeInUp");
+                    $("#leftArticle").append(leftArticle);
+                    boyArtNum++;
+                }
+                if (typeof (data.girl) != "undefined") {
+                    var rightArticle = createArticleBref(data.girl);
+                    rightArticle.addClass("animated fadeInUp");
+                    $("#rightArticle").append(rightArticle);
+                    girlArtNum++;
+                }
+                if (data.end == 1) {
+                    isReady = 0;//如果数据库中没有数据量，就在窗口滚动的时候不进行ajax请求了
+                } else {
+                    isReady = 1;
+                }
+                if (isFirst == 1) {
+                    $("#articleWrap div.articleBref:eq(0)").css("animation-delay", "3s");
+                    $("#articleWrap div.articleBref:eq(1)").css("animation-delay", "3s");
+                    isFirst = 0;
+                }
+                // isReady = 1;
+                console.log("success!");
+            },
+            error: function () {
+                isReady = 1;
+                console.log("加载失败了！");
+            }
+        });
+    }
+    $(function () {
+        getTwoArticles();
+
+        $(window).scroll(function () {
+            if (isReady == 0) {
+                return;
+            }
+            var bot = 50; //bot是底部距离的高度
+            if ($(document).height() - $(window).height() - $(window).scrollTop() <= bot) {
+                getTwoArticles();
+            }
+        });
+    });
+
+</script>
+
+</html>

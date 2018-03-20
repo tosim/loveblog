@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test websocket</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+	var ws = new WebSocket("ws://localhost:8080/loveblog/testws/"+10086+"?id=xbb");
+	ws.onopen = function(event){
+		console.log("onopen");
+		console.log(event);
+		ws.send("hello websocket!");
+	}
+	ws.onclose = function(event){
+		console.log("onclose!");
+		console.log(event);
+	}
+	ws.onmessage = function(event){
+		console.log("onmessage!");
+		console.log(event.data);
+		console.log(event);
+	}
+	ws.onerror = function(event){
+		console.log("onerror!");
+		console.log(event);
+	}
+
+</script>
+</html>

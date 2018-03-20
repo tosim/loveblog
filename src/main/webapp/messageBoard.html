@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1"/>
+
+
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script type="text/javascript" src="js/common.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/messageBoard.css">
+<link rel="stylesheet" type="text/css" href="css/otherItems.css">
+<!--<link rel="stylesheet" type="text/css" href="css/.css">-->
+
+<link rel="stylesheet" type="text/css" href="css/comment.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+<title></title>
+
+</head>
+    <body>
+<div id="header">
+        <div id="headWrap">
+            <div id="menu"><img src="img/menu.png"/></div>
+            <a href="index.html"><img src="img/logo.png"/></a>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="studyNotes.html">学习笔记</a></li>
+                <li><a href="lifeThink.html">生活随笔</a></li>
+                <li><a href="tools.html">工具下载</a></li>
+                <li><a href="messageBoard.html">留言板</a></li>
+                <li><a href="aboutUs.html">关于我们</a></li>
+                <li id="login"><a>登录</a></li>
+            </ul>
+        </div>
+</div>
+<div id="wrapper">
+    <!-- wrap start! -->
+    <div id="wrap">
+        <!-- leftWrap start! -->
+        <div class="leftWrap">
+            <!-- nav start! -->
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html">首页 </a></li>
+                    <li style="font-size: 10px;"> >> </li>
+                    <li class="active"><a href="messageBoard.html">留言板</a></li>
+                </ul>
+            </div>
+            <!-- nav end! -->
+            <div class="brefsWrap">
+                <div class="brefs">
+                    <!-- information start! -->
+                    <div id="infoHead">通知</div>
+                    <div id="infoCont">
+                        <ul>
+                            <li>1.请文明留言。</li>
+                            <li>2.有效留言积攒积分。</li>
+                            <li>3.后续将开发实用工具下载功能，可下载一些本人使用的实用工具。</li>
+                            <li>4.本站纯手工原生开发，如有bug，请大家留言或者邮箱通知，如有不便，敬请谅解。</li>
+                        </ul>
+                    </div>
+                    <!-- information end! -->
+                </div>
+                <!-- brefs end! -->
+                <!-- commentsArea start -->
+                <div id="commentsArea">
+                    <!-- 编辑区 -->
+                    <div id="editArea">
+                        <div><textarea></textarea></div>
+                        <!--<button id="login">登录</button>-->
+                        <button id="submit">发表</button>
+                    </div>
+                
+
+                    <!-- 统计 -->
+                    <div id="statistics">
+                        <div class="comm">评论</div>
+                        <div class="static"><span>12</span>人参与评论，<span>18</span>条评论</div>
+                        <div class="newComm">最新评论</div>
+                    </div>
+                
+
+                    <!-- showComments start! -->
+                    <div id="showComments">
+                        <!-- comment start ! -->
+                        <div class="comment">
+                            <div class="userInfo">
+                                <div class="userIcon"><img src="img/girl.jpg"></div>
+                                <i>冯小婧</i>
+                            </div>
+                            <div class="time">2017年5月9日</div>  
+                            <div class="cont">哦我饿部分哦我恶补巍峨</div>   
+                            <div class="btns">
+                                <a>回复</a>
+                                <a>赞同</a>
+                                <a>反对</a>
+                            </div>       
+                        </div>
+                        <!-- comment ends! -->
+                    </div>
+                    <!-- showComments end! -->
+                    <div id="moreComments">点击加载更多评论</div>
+                </div>
+                <!-- commentsArea end -->
+            </div>
+            <!-- brefsWrap end -->
+        </div>
+        <!-- leftWrap end! -->
+        <div id="otherItems">
+            <div class="item" style="position:relative;height: 50px;padding: 0; box-shadow: none;">
+              <form class="search">
+                <!-- <i class="fa fa-search"></i> -->
+                  <input class="searchTerm" placeholder="Enter your search term ..." /><input class="searchButton"/>
+                </form>
+          </div>
+           <!--  <div id="new" class="item">
+                <div><h3>最新文章</h3></div>
+                <ul>
+                    <li><i class="firstI">1</i><h4>我问问我</h4></li>
+                    <li><i>2</i><h4>我问问我</h4></li>
+                    <li><i>3</i><h4>我问问我</h4></li>
+                    <li><i>4</i></li>
+                    <li><i>5</i></li>
+                    <li><i>6</i></li>
+                    <li><i>7</i></li>
+                    <li><i>8</i></li>
+                    <li><i>9</i></li>
+                    <li><i>10</i></li>
+                </ul>
+            </div>
+            <div id="hot" class="item">
+                <div><h3>热门文章</h3></div>
+                <ul>
+                    <li><i class="firstI">1</i><h4>我问问我</h4></li>
+                    <li><i>2</i></li>
+                    <li><i>3</i></li>
+                    <li><i>4</i></li>
+                    <li><i>5</i></li>
+                    <li><i>6</i></li>
+                    <li><i>7</i></li>
+                    <li><i>8</i></li>
+                    <li><i>9</i></li>
+                    <li><i>10</i></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $("#otherItems h4").click(function(){
+                    alert("click!");
+                });
+            </script> -->
+            <!-- <div class="item">dddd</div> -->
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!-- wrap end -->
+</div>
+<div id="footer">
+    <section class="copy">
+        版权所有(c)2017<br />
+        <!-- 备案/许可证编号：<a target="_blank" href="#"></a><br /> -->
+        Designed By 姚小城 &amp 冯小婧
+    </section>
+</div>
+<div id="totop"><span></span></div>
+<div id="overLay"></div>
+<div id="loginmodal" >
+  <h1>User Login</h1>
+  
+    <label>Username:</label>
+    <input type="text" name="username" id="username" class="txtfield">
+      
+    <label>Password:</label>
+    <input type="password" name="password" id="password" class="txtfield">
+      
+    <div style="text-align: center;"><input type="submit" name="loginbtn" id="loginbtn" class="logbtn" value="Log In"></div>
+  
+</div>
+
+</body>
+<script type="text/javascript" src="js/comment.js"></script>
+<script type="text/javascript">
+    ART_ID = 50;
+    getNewAndHot();
+    getComStat(ART_ID);
+    getComments(ART_ID);
+</script>
+
+</html>
+
+<!--create table level(
+    lv int primary key,
+    exp int not null,
+    name varchar(50) unique
+)engine=innodb default charset=utf8;
+
+create table toolcomment (
+  tcom_id int NOT NULL AUTO_INCREMENT primary key,
+  t_id int NOT NULL,
+  u_id int NOT NULL,
+  tcom_content varchar(100) DEFAULT NULL,
+  tcom_time date NOT NULL,
+  tcom_agree int NOT NULL DEFAULT '0',
+  tcom_disagree int NOT NULL DEFAULT '0',
+  FOREIGN KEY (t_id) REFERENCES tool (t_id) ON DELETE CASCADE,
+   FOREIGN KEY (u_id) REFERENCES user (u_id) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+create table toolclass(
+    tc_id int primary key AUTO_INCREMENT,
+    tc_name varchar(50) unique,
+    tc_desc text 
+)engine=innodb AUTO_INCREMENT=5 default charset=utf8;
+
+create table artclass(
+    ac_id int primary key AUTO_INCREMENT,
+    ac_name varchar(50) unique
+)engine=innodb default charset=utf8;-->

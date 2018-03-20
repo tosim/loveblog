@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1"/>
+
+
+<!--<link rel="stylesheet" type="text/css" href="css/animate.css">-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script type="text/javascript" src="js/common.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/messageBoard.css">
+<link rel="stylesheet" type="text/css" href="css/otherItems.css">
+<title></title>
+
+</head>
+<body>
+<div id="header">
+        <div id="headWrap">
+            <div id="menu"><img src="img/menu.png"/></div>
+            <a href="index.html"><img src="img/logo.png"/></a>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="studyNotes.html">学习笔记</a></li>
+                <li><a href="lifeThink.html">生活随笔</a></li>
+                <li><a href="tools.html">工具下载</a></li>
+                <li><a href="messageBoard.html">留言板</a></li>
+                <li><a href="aboutUs.html">关于我们</a></li>
+                <li id="login"><a>登录</a></li>
+            </ul>
+        </div>
+</div>
+<div id="wrapper">
+    <!-- wrap start! -->
+    <div id="wrap">
+        <!-- articleWrap start! -->
+        <div class="leftWrap">
+            <!-- nav start! -->
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html">首页 </a></li>
+                    <li style="font-size: 10px;"> >> </li>
+                    <li class="active"><a href="aboutUs.html">关于我们</a></li>
+                </ul>
+            </div>
+            <!-- nav end! -->
+            <div class="brefsWrap">
+                <div class="brefs">
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+                    关于我们！<br>
+
+                </div>
+                <!-- articles end! -->
+                
+            </div>
+            <!-- articlesWrap end -->
+        </div>
+        <!-- articleWrap end! -->
+        <div id="otherItems">
+           <!--  <div id="new" class="item">
+                <div><h3>最新文章</h3></div>
+                <ul>
+                    <li><i class="firstI">1</i><h4>我问问我</h4></li>
+                    <li><i>2</i><h4>我问问我</h4></li>
+                    <li><i>3</i><h4>我问问我</h4></li>
+                    <li><i>4</i></li>
+                    <li><i>5</i></li>
+                    <li><i>6</i></li>
+                    <li><i>7</i></li>
+                    <li><i>8</i></li>
+                    <li><i>9</i></li>
+                    <li><i>10</i></li>
+                </ul>
+            </div>
+            <div id="hot" class="item">
+                <div><h3>热门文章</h3></div>
+                <ul>
+                    <li><i class="firstI">1</i><h4>我问问我</h4></li>
+                    <li><i>2</i></li>
+                    <li><i>3</i></li>
+                    <li><i>4</i></li>
+                    <li><i>5</i></li>
+                    <li><i>6</i></li>
+                    <li><i>7</i></li>
+                    <li><i>8</i></li>
+                    <li><i>9</i></li>
+                    <li><i>10</i></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $("#otherItems h4").click(function(){
+                    alert("click!");
+                });
+            </script> -->
+            <!-- <div class="item">dddd</div> -->
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!-- wrap end -->
+</div>
+<div id="footer">
+    <section class="copy">
+        版权所有(c)2017<br />
+        <!-- 备案/许可证编号：<a target="_blank" href="#"></a><br /> -->
+        Designed By 姚小城 &amp 冯小婧
+    </section>
+</div>
+<div id="totop"><span></span></div>
+<div id="overLay"></div>
+<div id="loginmodal" class="modal">
+      <h1>User Login</h1>
+      
+        <label>Account:</label>
+        <input type="text" name="account" id="account" class="txtfield">
+          
+        <label>Password:</label>
+        <input type="password" name="password" id="password" class="txtfield">
+          
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="loginbtn" class="logbtn" value="Log In"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <input type="text" name="registbtn" id="toregistbtn" class="logbtn" value="Regist">
+        </div>
+      
+</div>
+<div id="registmodal" class="modal">
+      <h1>User Regist</h1>
+
+        <label>Username:</label>
+        <input type="text" name="" id="regUsername" class="txtfield">
+      
+        <label>Telephone:</label>
+        <input type="text" name="telephone" id="regTelephone" class="txtfield">
+        
+        <label>Email:</label>
+        <input type="text" name="email" id="regEmail" class="txtfield">
+
+        <label>Password:</label>
+        <input type="password" name="password" id="regpassword" class="txtfield">
+        
+        <label>Confirm:</label>
+        <input type="password" name="confirm" id="confirm" class="txtfield">
+
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="registbtn" class="logbtn" value="Regist"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <!-- <input type="text" name="registbtn" id="registbtn" class="logbtn" value="Regist"> -->
+        </div>
+      
+</div>
+</body>
+<script type="text/javascript">
+    function getNewAndHot(){
+        $.ajax({
+            url:"/loveblog/GetTenNewestServlet",
+            type:"post",
+            data:{},
+            dataType:"json",
+            success:function(data){
+                //console.log("new:" + JSON.stringify(data));
+                var New = $("<div id='new' class='item'></div>");
+                New.append($("<div><h3>最新文章</h3></div>"));
+                var newUl = $("<ul></ul>");
+                console.log("new length = " + data.length);
+                for(var i = 0;i < data.length;i++){
+                    var newLi = $("<li><i>"+(i+1)+"</i>"+"<h4>"+data[i].art_title+"</h4>"+"</i></li>");
+                    (function(article){
+                        newLi.children("h4").click(function(){
+                            // showArticleDetail(article);
+                            window.location.href = "articleDetail.html?article="+article.art_id;
+                        });
+                    })(data[i]);
+                    if(i == 0){
+                        newLi.children("i").addClass("firstI");
+                    }
+                    newUl.append(newLi);
+                }
+                New.append(newUl);
+                $("#otherItems").append(New);
+            },
+            error:function(){
+                console.log("getNew Failed");
+            }
+        });
+        $.ajax({
+            url:"/loveblog/GetTenHotestServlet",
+            type:"post",
+            data:{},
+            dataType:"json",
+            success:function(data){
+                //console.log("hot:" + JSON.stringify(data));
+                var Hot = $("<div id='hot' class='item'></div>");
+                Hot.append($("<div><h3>热门文章</h3></div>"));
+                var HotUl = $("<ul></ul>");
+                console.log("hot length = " + data.length);
+                for(var i = 0;i < data.length;i++){
+                    var HotLi = $("<li><i>"+(i+1)+"</i>"+"<h4>"+data[i].art_title+"</h4>"+"</i></li>");
+                    (function(article){
+                        HotLi.children("h4").click(function(){
+                            // showArticleDetail(article);
+                            window.location.href = "articleDetail.html?article="+article.art_id;
+                        });
+                    })(data[i]);
+                    
+                    if(i == 0){
+                        HotLi.children("i").addClass("firstI");
+                    }
+                    HotUl.append(HotLi);
+                }
+                Hot.append(HotUl);
+                $("#otherItems").append(Hot);
+            },
+            error:function(){
+                console.log("getHot Failed");
+            }
+        });
+    }
+getNewAndHot();
+</script>
+</html>

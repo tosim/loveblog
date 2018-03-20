@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1"/>
+
+
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+
+<!-- editormd start -->
+<link href="editormd/css/editormd.min.css" rel="stylesheet" type="text/css" /><!--editormd.css-->
+<script src="editormd/lib/marked.min.js"></script>
+<script src="editormd/lib/prettify.min.js"></script>
+<script src="editormd/lib/raphael.min.js"></script>
+<script src="editormd/lib/underscore.min.js"></script>
+<script src="editormd/lib/sequence-diagram.min.js"></script>
+<script src="editormd/lib/flowchart.min.js"></script>
+<script src="editormd/lib/jquery.flowchart.min.js"></script>
+<script src="editormd/editormd.min.js"></script>
+<!-- editormd end! -->
+
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script type="text/javascript" src="js/common.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/comment.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+<link rel="stylesheet" type="text/css" href="css/toolDetail.css">
+<link rel="stylesheet" type="text/css" href="css/detail.css">
+<link rel="stylesheet" type="text/css" href="css/otherItems.css">
+
+<title></title>
+
+</head>
+<body>
+<div id="header">
+	<div id="headWrap">
+        <div id="menu"><img src="img/menu.png"/></div>
+        <a href="index.html"><img src="img/logo.png"/></a>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="studyNotes.html">学习笔记</a></li>
+            <li><a href="lifeThink.html">生活随笔</a></li>
+            <li><a href="tools.html">工具下载</a></li>
+            <li><a href="messageBoard.html">留言板</a></li>
+            <li><a href="aboutUs.html">关于我们</a></li>
+            <li id="login"><a>登录</a></li>
+        </ul>
+    </div>
+</div>
+<div id="wrapper">
+    <!-- wrap start! -->
+    <div id="wrap">
+        <!-- articleWrap start! -->
+        <div class="leftWrap">
+            <!-- nav start! -->
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html">首页 </a></li>
+                    <li style="font-size: 10px;"> >> </li>
+                    <li class="active"><a href="studyNotes.html"></a></li>
+                </ul>
+            </div>
+            <!-- nav end! -->
+            <div class="brefsWrap">
+                <div class="brefs">
+                        <!-- 这里显示文章的主体内容 -->
+
+
+                        <!--<div class="toolDetail">
+                        	<h2 class="toolname">Ollydebug <span class="version">1.0.0</span></h2>
+                        	<p class="abstract">这是简介哦这是简介这是简介哦这是简介这是简介哦这是简介这是简介哦这是简介这是简介哦这是简介这是简介哦这是简介</p>
+                        	<ul class="tags">
+                        		<li>标签1</li>
+                        		<li>标签2</li>
+                        		<li>标签3</li>
+                        	</ul>
+                        	<div class="description">
+                        		<h4>详细介绍</h4>
+                        		<p>
+                        			这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍这是详细介绍
+                        		</p>
+                        	</div>
+                        	<div class="markWrap">
+								<div class="mark">
+		                     		<i>♡</i>
+		                     		<span class="like">喜欢(<span>10</span>)</span>
+	                 			</div>
+	                 			<div class="download">下载</div>
+	                 		</div>
+                        </div>-->
+
+
+                </div>
+                <!-- articles end! -->
+
+
+
+                <!-- commentsArea start -->
+                <div id="commentsArea">
+                    <!-- 编辑区 -->
+                    <div id="editArea">
+                        <div><textarea></textarea></div>
+                        <!--<button id="login">登录</button>-->
+                        <button id="submit">发表</button>
+                    </div>
+                
+
+                    <!-- 统计 -->
+                    <div id="statistics">
+                        <div class="comm">评论</div>
+                        <div class="static"><span>12</span>人参与评论，<span>18</span>条评论</div>
+                        <div class="newComm">最新评论</div>
+                    </div>
+                
+
+                    <!-- showComments start! -->
+                    <div id="showComments">
+                        <!-- comment start ! -->
+                        <!-- <div class="comment">
+                            <div class="userInfo">
+                                <div class="userIcon"><img src="img/girl.jpg"></div>
+                                <i>冯小婧</i>
+                            </div>
+                            <div class="time">2017年5月9日</div>  
+                            <div class="cont">哦我饿部分哦我恶补巍峨</div>   
+                            <div class="btns">
+                                <a>回复</a>
+                                <a>赞同</a>
+                                <a>反对</a>
+                            </div>       
+                        </div> -->
+                        
+                        <!-- comment ends! -->
+                    </div>
+                    <!-- showComments end! -->
+                    <div id="moreComments">点击加载更多评论</div>
+                </div>
+                <!-- commentsArea end -->
+
+
+
+            </div>
+            <!-- articlesWrap end -->
+        </div>
+        <!-- articleWrap end! -->
+        <div id="otherItems">
+           <div class="item" style="position:relative;height: 50px;padding: 0; box-shadow: none;">
+              <form class="search">
+                <!-- <i class="fa fa-search"></i> -->
+                  <input class="searchTerm" placeholder="Enter your search term ..." /><input class="searchButton"/>
+                </form>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!-- wrap end -->
+</div>
+<div id="footer">
+    <section class="copy">
+        版权所有(c)2017<br />
+        <!-- 备案/许可证编号：<a target="_blank" href="#"></a><br /> -->
+        Designed By 姚小城 &amp 冯小婧
+    </section>
+</div>
+<div id="totop"><span></span></div>
+<div id="overLay"></div>
+<div id="loginmodal" class="modal">
+      <h1>User Login</h1>
+      
+        <label>Account:</label>
+        <input type="text" name="account" id="account" class="txtfield">
+          
+        <label>Password:</label>
+        <input type="password" name="password" id="password" class="txtfield">
+          
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="loginbtn" class="logbtn" value="Log In"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <input type="text" name="registbtn" id="toregistbtn" class="logbtn" value="Regist">
+        </div>
+      
+</div>
+<div id="registmodal" class="modal">
+      <h1>User Regist</h1>
+
+        <label>Username:</label>
+        <input type="text" name="" id="regUsername" class="txtfield">
+      
+        <label>Telephone:</label>
+        <input type="text" name="telephone" id="regTelephone" class="txtfield">
+        
+        <label>Email:</label>
+        <input type="text" name="email" id="regEmail" class="txtfield">
+
+        <label>Password:</label>
+        <input type="password" name="password" id="regpassword" class="txtfield">
+        
+        <label>Confirm:</label>
+        <input type="password" name="confirm" id="confirm" class="txtfield">
+
+        <div style="text-align: center;">
+            <input type="submit" name="loginbtn" id="registbtn" class="logbtn" value="Regist"> 
+            <!-- <input type="text" name="canclebtn" id="cancelbtn" class="logbtn" value="Cancel"> -->
+            <!-- <input type="text" name="registbtn" id="registbtn" class="logbtn" value="Regist"> -->
+        </div>
+      
+</div>
+<!-- <div class="modal" ><h1>Regist Success!</h1></div> -->
+
+
+
+
+</body>
+
+<script type="text/javascript" src="js/comment.js"></script>
+<script type="text/javascript" src="js/showDetail.js"></script>
+<script type="text/javascript">
+$(function(){
+    getNewAndHot();
+    changeContent();
+
+    $(window).on("popstate",function(e){
+        console.log("onpopstate");
+        changeContent();
+    });
+    // console.log("first = " + location.href);
+});
+function changeContent(){
+    var query = location.href.split("?")[1];
+    if (!query) {
+        // 如果没有查询条件，则显示默认第1个章节
+        history.replaceState(null, "", location.href + "?tool=" + 1);    
+        changeContent();
+    }else {     
+        // console.log("start query" + location.href);
+        var toolId = query.substring(5,query.length);
+        TOOL_ID = toolId;
+        showToolDetail(TOOL_ID,true);
+    }    
+}
+</script>
+</html>
+
+
+<!--http://localhost:8080/loveblog/DownloadServlet?filepath=D:/Data_Depertory/MavenProject/loveblog/target/loveblog/tools/11/13/8d567f04-d9ae-4b55-8644-b245aff935d4_js%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.txt-->
